@@ -10,7 +10,9 @@ const ColorSelector: FC = () => {
       type="text"
       value={shape.color}
       onChange={(col) => {
-        dispatch(changeColor("#" + col.target.value.replace(/[^0-9]/g, "")));
+        dispatch(
+          changeColor("#" + col.target.value.replace(/[^0-9a-fA-F]/g, ""))
+        );
       }}
       maxLength={7}
     ></input>
